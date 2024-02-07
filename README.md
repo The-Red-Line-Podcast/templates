@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/README.html) recommend installing with [pipx](https://pipx.pypa.io/latest/installation/).
+- [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/README.html) recommended to install with [pipx](https://pipx.pypa.io/latest/installation/).
 - [rye](https://rye-up.com/guide/installation/)
 
 ## Adding Templates

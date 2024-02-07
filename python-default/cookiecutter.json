@@ -1,5 +1,6 @@
 {
     "project_name": "RL project",
-    "project_slug": "{{cookiecutter.project_name.lower().replace(' '','_')}}",
-    "author": "The Red Line Podcast"
+    "project_slug": "{{cookiecutter.project_name.lower().replace(' ','_')}}",
+    "author": "The Red Line Podcast",
+    "description": "Some short description here"
 }
