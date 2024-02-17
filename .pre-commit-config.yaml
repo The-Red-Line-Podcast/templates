@@ -5,3 +5,14 @@ repos:
       - id: commitizen
       - id: commitizen-branch
         stages: [commit-msg]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: end-of-file-fixer
+        exclude: "tests/((commands|data)/|test_).+"
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: debug-statements
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
