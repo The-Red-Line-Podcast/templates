@@ -1,0 +1,9 @@
+{
+    "templates": {
+        "python-default": {
+            "path": "./python-default",
+            "title": "Python Default",
+            "description": "Default Redline Podcast default template"
+        }
+    }
+}
