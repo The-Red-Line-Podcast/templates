@@ -1,12 +1,24 @@
 # Project
 
-{insert short project description here}
+{{cookiecutter.description}}
+
+## Project Setup
+
+This repository uses cross platform devcontainers+docker to manage project dependencies
+and project setup.
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/engine/install/)
+- VScode `devcontainers` extension.
+
+#### VScode (Recommended)
+
+Attach the devcontainer using the VScode extension ...WIP
+
+See more here [https://containers.dev/supporting.html](https://containers.dev/supporting.html)
 
 ## Usage
-
-### Project Setup
-
-After pulling the repository, install all pinned dependencies using `rye sync`.
 
 ### Basic Commands
 

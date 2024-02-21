@@ -1,6 +1,12 @@
 {
     "project_name": "RL project",
-    "project_slug": "{{cookiecutter.project_name.lower().replace(' ','_')}}",
     "author": "The Red Line Podcast",
-    "description": "Some short description here"
+    "description": "Some short description here",
+    "project_type": [
+        "poc",
+        "tool",
+        "frontend",
+        "backend"
+    ],
+    "__project_slug": "{{cookiecutter.project_type}}_{{cookiecutter.project_name|lower|replace(' ', '_')}}"
 }
