@@ -7,3 +7,5 @@ elif [ "$(<./.python-version)" != "$PYTHON_VERSION" ]; then
 fi
 
 rye sync
+
+pre-commit install

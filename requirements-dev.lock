@@ -9,29 +9,17 @@
 
 -e file:.
 cfgv==3.4.0
-    # via pre-commit
 distlib==0.3.8
-    # via virtualenv
 filelock==3.13.1
-    # via virtualenv
 identify==2.5.34
-    # via pre-commit
 iniconfig==2.0.0
-    # via pytest
 nodeenv==1.8.0
-    # via pre-commit
 packaging==23.2
-    # via pytest
 platformdirs==4.2.0
-    # via virtualenv
 pluggy==1.4.0
-    # via pytest
 pre-commit==3.6.1
 pytest==8.0.2
-    # via templates
 pyyaml==6.0.1
-    # via pre-commit
-setuptools==69.1.0
-    # via nodeenv
 virtualenv==20.25.0
-    # via pre-commit
+# The following packages are considered to be unsafe in a requirements file:
+setuptools==69.1.0

@@ -9,10 +9,6 @@
 
 -e file:.
 iniconfig==2.0.0
-    # via pytest
 packaging==23.2
-    # via pytest
 pluggy==1.4.0
-    # via pytest
 pytest==8.0.2
-    # via templates

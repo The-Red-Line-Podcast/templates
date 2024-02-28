@@ -54,9 +54,9 @@ def repo_already_exists() -> bool:
 if __name__ == "__main__":
     if repo_already_exists():
         print(
-            f"The repository {PROJECT_SLUG} already exists. Please use a different unique name."
+            f"The repository {PROJECT_SLUG} already exists. Please use a different unique name.",
         )
         sys.exit(1)
 
-    # if not create_repo():
-    #     sys.exit(1)
+    if not create_repo():
+        sys.exit(1)

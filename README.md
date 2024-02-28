@@ -17,6 +17,9 @@ Run `cookiecutter https://github.com/The-Red-Line-Podcast/templates` and follow 
 ### Prerequisites
 
 - [docker](https://docs.docker.com/engine/install/)
+- VScode `devcontainers` extension.
+
+Any development should be done in the devcontainer!
 
 ### Creating New Template
 
@@ -53,3 +56,4 @@ Run `cookiecutter ./path/to/templates/repo`
 
 - Script that automatically copies reference config files to a new template directory
 - Centralise hooks https://github.com/cookiecutter/cookiecutter/issues/1593
+- Add cleanup logic for when project rendering fails

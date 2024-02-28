@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION="3.12"
+ARG PYTHON_VERSION="3.12.1"
 ARG DEBIAN_RELEASE="bookworm"
 
 FROM mcr.microsoft.com/devcontainers/python:${PYTHON_VERSION}-${DEBIAN_RELEASE} AS devcontainer
@@ -17,4 +17,6 @@ RUN su ${REMOTE_USER} -c ' \
     && mkdir -p ~/.local/share/bash-completion/completions \
     && rye self completion > ~/.local/share/bash-completion/completions/rye.bash \
     && rye toolchain register $(env -i which python) \
+    && rye install cookiecutter \
+    && rye install pre-commit \
     ' 2>&1

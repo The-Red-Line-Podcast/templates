@@ -32,7 +32,8 @@
                 "GitHub.vscode-pull-request-github",
                 "tamasfe.even-better-toml",
                 "charliermarsh.ruff",
-                "eamodio.gitlens"
+                "eamodio.gitlens",
+                "ms-azuretools.vscode-docker"
             ]
         }
     }
