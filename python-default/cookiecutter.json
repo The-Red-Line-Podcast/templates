@@ -6,7 +6,23 @@
         "poc",
         "tool",
         "frontend",
-        "backend"
+        "backend",
+        "plops"
     ],
-    "__project_slug": "{{cookiecutter.project_type}}_{{cookiecutter.project_name|lower|replace(' ', '_')}}"
+    "private_repo": true,
+    "__project_slug": "{{cookiecutter.project_type}}_{{cookiecutter.project_name|lower|replace(' ', '_')}}",
+    "__prompts__": {
+        "project_name": "Select your project name",
+        "author": "Enter initial author/maintainer name",
+        "description": "Short description",
+        "project_type": {
+            "__prompt__": "What type of project is this?",
+            "poc": "poc - Proof of concept, not for production use",
+            "tool": "tool - Tool which is directly used for podcast research",
+            "frontend": "frontend - Frontend code/project",
+            "backend": "backend - Backend code/project",
+            "plops": "plops - Platform operations tooling"
+        },
+        "private_repo": "Is this repo private?"
+    }
 }
