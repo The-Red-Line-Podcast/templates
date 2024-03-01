@@ -25,6 +25,7 @@ See more here [https://containers.dev/supporting.html](https://containers.dev/su
 All rye commands can be found here [rye-commands](https://rye-up.com/guide/commands/)
 Commonly used:
 
+- `rye sync`
 - `rye add <package>`
 - `rye remove <package>`
 - `rye format`, uses built in ruff
