@@ -28,6 +28,7 @@ Any development should be done in the devcontainer!
 - Template the repo according to [cookiecutter guide](https://cookiecutter.readthedocs.io/en/stable/)
 - Copy the `hooks/`, `.pre-commit-config.yaml`, `Dockerfile`, `.devcontainer` and `pyproject.toml` from the reference_config_files
 - Add  the new template to the `cookiecutter.json` in the repo root
+
 ```json
 {
     "templates": {
@@ -45,8 +46,6 @@ Any development should be done in the devcontainer!
 }
 
 ```
-
-
 
 ### Testing Template locally
 

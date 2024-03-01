@@ -16,4 +16,4 @@ RUN su ${REMOTE_USER} -c ' \
     && source "$HOME/.rye/env" \
     && mkdir -p ~/.local/share/bash-completion/completions \
     && rye self completion > ~/.local/share/bash-completion/completions/rye.bash \
-    && rye toolchain register $(env -i which python)
+    && rye toolchain register $(env -i which python)'

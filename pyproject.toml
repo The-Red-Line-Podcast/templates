@@ -23,11 +23,11 @@ managed = true
 dev-dependencies = [
 ]
 
-
-# [project.scripts]
-# run_local = "cookiecutter ./"
-
 [tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
 select = [
     "A",     # flake8-builtins https://beta.ruff.rs/docs/rules/#flake8-builtins-a
     "ANN",   # flake8-annotation https://beta.ruff.rs/docs/rules/#flake8-annotations-ann
@@ -57,8 +57,7 @@ select = [
     "UP032", # pyupgrade https://beta.ruff.rs/docs/rules/#pyupgrade-up
     "UP037", # pyupgrade https://beta.ruff.rs/docs/rules/#pyupgrade-up
 ]
-line-length = 120
-target-version = "py312"
+
 ignore = [
     "B008",
     "C901",

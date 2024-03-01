@@ -5,7 +5,7 @@ from subprocess import CalledProcessError
 PROJECT_SLUG = "{{ cookiecutter.__project_slug }}"
 
 
-def create_repo() -> bool:
+def create_remote_repo() -> bool:
     try:
         subprocess.run(
             [
@@ -58,5 +58,5 @@ if __name__ == "__main__":
         )
         sys.exit(1)
 
-    if not create_repo():
+    if not create_remote_repo():
         sys.exit(1)

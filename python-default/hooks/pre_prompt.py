@@ -7,7 +7,15 @@ def is_docker_installed() -> bool:
         subprocess.run(["docker", "--version"], capture_output=True, check=True)
         return True
     except Exception:
-        return False
+        return (
+            "./dockerenv"
+            in subprocess.run(
+                ["ls", "-la", "/.dockerenv"],
+                capture_output=True,
+                check=True,
+                encoding="utf-8",
+            ).stdout
+        )
 
 
 def is_github_cli_installed() -> bool:
@@ -17,6 +25,7 @@ def is_github_cli_installed() -> bool:
     except Exception:
         return False
 
+# TODO function to check if ghcli is setup properly
 
 if __name__ == "__main__":
     if not is_docker_installed():
