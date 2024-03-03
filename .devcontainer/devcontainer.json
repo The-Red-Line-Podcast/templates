@@ -1,11 +1,12 @@
 {
     "name": "${containerWorkspaceFolderBasename}",
-
-    "build": {
-        "dockerfile": "../Dockerfile",
-        "target": "devcontainer"
-    },
-    "postCreateCommand": "./.devcontainer/post-create.sh",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "bash ./.devcontainer/post-create.sh",
+    "userEnvProbe": "loginInteractiveShell",
     "customizations": {
         "vscode": {
             "settings": {

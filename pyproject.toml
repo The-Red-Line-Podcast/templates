@@ -14,9 +14,6 @@ requires-python = ">=3.11"
 [project.scripts]
 hello = "templates:hello"
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
