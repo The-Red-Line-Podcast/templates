@@ -21,6 +21,16 @@ dev-dependencies = ["pre-commit", "pytest"]
 [tool.ruff]
 line-length = 120
 target-version = "py312"
+extend-exclude = [
+    ".pytest_cache",
+    ".mise.toml",
+    "**/{__pycache__}/*",
+    "Dockerfile",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 80
 
 [tool.ruff.lint]
 select = [
@@ -52,7 +62,6 @@ select = [
     "UP032", # pyupgrade https://beta.ruff.rs/docs/rules/#pyupgrade-up
     "UP037", # pyupgrade https://beta.ruff.rs/docs/rules/#pyupgrade-up
 ]
-
 ignore = [
     "B008",
     "C901",
@@ -81,7 +90,9 @@ ignore = [
 fixable = ["I", "COM", "RSE", "E", "W", "G", "PT"]
 unfixable = ["B"]
 
+[tool.ruff.lint.per-file-ignores]
+"**/{tests}/*" = ["ANN201", "ANN204", "S311", "F401", "F403"]
 
 [tool.ruff.flake8-quotes]
-inline-quotes    = "double"
+inline-quotes = "double"
 docstring-quotes = "double"
