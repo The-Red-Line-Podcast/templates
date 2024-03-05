@@ -26,23 +26,6 @@ ENV PATH="$RYE_HOME/shims:$PATH"
 # See: https://github.com/mitsuhiko/rye/issues/246
 RUN curl -sSf https://rye-up.com/get | RYE_NO_AUTO_INSTALL=1 RYE_INSTALL_OPTION="--yes" bash
 
-
-# Download dependencies as a separate step to take advantage of Docker's caching.
-# Leverage a bind mount to some files to avoid having to copy them into
-# into this layer.
-RUN --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-  --mount=type=bind,source=requirements.lock,target=requirements.lock \
-  --mount=type=bind,source=requirements-dev.lock,target=requirements-dev.lock \
-  --mount=type=bind,source=.python-version,target=.python-version \
-  --mount=type=bind,source=README.md,target=README.md \
-  rye sync --no-dev --no-lock
-
-RUN . .venv/bin/activate
-
-# Stage for development.
-# The development environment assumes a devcontainer and the environment is
-# closed inside the container, so you don't need to be aware of the virtual environment
-
 FROM base AS dev
 
 RUN --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
@@ -51,7 +34,7 @@ RUN --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
   --mount=type=bind,source=.python-version,target=.python-version \
   --mount=type=bind,source=README.md,target=README.md \
   rye sync --no-lock
-
+RUN . .venv/bin/activate
 RUN rye tools install pre-commit
 RUN rye tools install cookiecutter
 
