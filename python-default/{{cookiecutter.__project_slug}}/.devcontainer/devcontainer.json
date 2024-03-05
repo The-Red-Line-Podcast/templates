@@ -1,31 +1,32 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
     "name": "${containerWorkspaceFolderBasename}",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "build": {
-        "dockerfile": "../Dockerfile",
-        "target": "devcontainer"
-    },
-    // Features to add to the dev container. More info: https://containers.dev/features.
-    // "features": {},
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [],
-    // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "./.devcontainer/post-create.sh",
-    // Configure tool-specific properties.
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "bash ./.devcontainer/post-create.sh",
+    "userEnvProbe": "loginInteractiveShell",
     "customizations": {
         "vscode": {
             "settings": {
                 "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
                 "[python]": {
-                    "editor.formatOnSave": true,
                     "editor.codeActionsOnSave": {
-                        "source.fixAll": true,
-                        "source.organizeImports": true
+                        "source.fixAll": "explicit",
+                        "source.fixAll.ruff": "explicit",
+                        "source.organizeImports": "explicit",
+                        "source.organizeImports.ruff": "explicit"
                     },
                     "editor.defaultFormatter": "charliermarsh.ruff"
-                }
+                },
+                "[toml]": {
+                    "editor.defaultFormatter": "tamasfe.even-better-toml"
+                },
+                "[json]": {
+                    "editor.defaultFormatter": "vscode.json-language-features"
+                },
+                "editor.formatOnSave": true
             },
             "extensions": [
                 "ms-python.vscode-pylance",
@@ -36,6 +37,4 @@
             ]
         }
     }
-    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    // "remoteUser": "root"
 }
